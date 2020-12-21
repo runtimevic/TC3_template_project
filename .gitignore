@@ -1,0 +1,17 @@
+_Boot
+_Libraries
+_CompileInfo
+*.bak
+*.csv
+*.dbg
+*.library
+*.suo
+*.svd
+*.sw[op]
+*.tmcRefac
+*.tpy
+*.~u
+*~
+.pytmc_build
+TrialLicense.tclrs
+UpgradeLog.htm
