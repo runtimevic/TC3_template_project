@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.5">
+  <POU Name="MAIN" Id="{ccac79b0-c6a0-4f9e-89fe-3f9f18cda55f}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	FB_Axis_X1 	: 	FB_Axis;
+	st_Axis_X1	: 	ST_AxisStruct;
+	
+//	FB_Axis_X2 	: 	FB_Axis;
+//	FB_Axis_Y 	: 	FB_Axis;
+//	FB_Axis_Z 	: 	FB_Axis;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//st_Axis_X1.stControl.bEnable := TRUE;
+st_Axis_X1.stStatus.bFwEnabled := TRUE;
+st_Axis_X1.stStatus.bBwEnabled := TRUE;
+FB_Axis_X1(stAxisStruct:= st_Axis_X1 );
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="12" Count="2" />
+      <LineId Id="2" Count="0" />
+      <LineId Id="15" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

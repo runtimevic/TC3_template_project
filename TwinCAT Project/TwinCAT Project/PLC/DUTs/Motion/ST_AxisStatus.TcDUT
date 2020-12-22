@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.5">
+  <DUT Name="ST_AxisStatus" Id="{9d7cecb1-beaf-45c1-90df-46de240bc048}">
+    <Declaration><![CDATA[TYPE ST_AxisStatus :
+STRUCT
+    //Outputs & Status
+    bEnabled: BOOL; //Axis drive enabled
+    bCommandAborted: BOOL; //Command aborted output of the eCommand function blocks
+    bBusy: BOOL; //Axis busy (eCommand function block is active)
+    bDone: BOOL; //Last eCommand function block executed successfully;
+    //bDone will also be set with the InGear and InVelocity outputs
+    //When InVelocity is set, fbMoveVelocity is still acitve, which is reflected by the bBusy status
+    bHomed: BOOL; //Axis homed
+    bMoving: BOOL; //Moving state from the NC
+    bFwEnabled: BOOL; //Positive movement of axis is enabled/disabled
+    bBwEnabled: BOOL; //Negative movement of axis is enabled/disabled
+    bGeared: BOOL; //Axis is an active slave
+    bCoupledGear1: BOOL;
+    bCoupledGear2: BOOL;
+    bCoupledGear3: BOOL;
+    bCoupledGear4: BOOL;
+    fActPosition: LREAL; //Actual position value
+    fActVelocity: LREAL; //Actual velocity
+    bError: BOOL; //Motion function block has produced error (NC drive not necessarily in error state)
+    nErrorID: UDINT; //Last motion function block errorID or NC errorID
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
